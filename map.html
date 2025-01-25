@@ -7,6 +7,7 @@
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <!-- Our CSS -->
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="map.css">
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
@@ -14,6 +15,42 @@
   <script src="map.js" defer></script>
 </head>
 <body>
+  <!-- Header Section -->
+  <div class="header">
+    <h1 class="platform-name">PutMeOn</h1>
+    <nav>
+      <div class="nav-item"><a href="index.html">Home</a></div>
+      <div class="nav-item"><a href="businessListings.html">Businesses</a></div>
+      <div class="nav-item"><a href="addBusiness.html">Add</a></div>
+      <div class="nav-item"><a href="map.html">Nearby</a></div>
+    </nav>
+
+    <!-- Player Stats Box -->
+    <button class = "profile-link">
+      <div class="player-stats-box">
+        <div class="stats-container">
+
+          <div class="profile-info">
+            <div class="stat">
+              <p>Darren Zhao</p>
+              <span id="player-level">Level 5, 500 Points </span>
+            </div>
+
+            <!-- <div class="stat">
+            <p>XP:</p>
+            <span id="player-xp">0</span>
+          </div> -->
+          </div>
+          <div class="progress">
+            <div class="stat">
+              <p>Role:</p>
+              <span id="player-role">Explorer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </button>
+  </div>
   <!-- Map Container -->
   <div id="map"></div>
 </body>
