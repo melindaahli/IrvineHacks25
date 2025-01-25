@@ -1,7 +1,9 @@
+WEB_INTERFACE = "http://127.0.0.1:5000"
+
 function addFlight() {
   let userInput = document.getElementById("user-input").value;
   //   console.log("hello");
-  fetch("http://127.0.0.1:5000/addFlight/" + userInput)
+  fetch(WEB_INTERFACE + "/addFlight/" + userInput)
     .then((response) => response.json())
     .then((response) => {
       console.log(response);
@@ -11,7 +13,7 @@ function addFlight() {
 }
 
 function displayFlights() {
-  fetch("http://127.0.0.1:5000/getFlights")
+  fetch(WEB_INTERFACE + "/getFlights")
     .then((response) => response.json())
     .then((response) => {
       //   console.log(response);
