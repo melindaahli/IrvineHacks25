@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>home businesses locator</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
     <script src="./script.js"></script>
   </head>
@@ -13,5 +13,55 @@
 
     <input type="text" id="user-input" />
     <button onclick="addFlight()">add flight</button>
+    
+    <!-- Navigation Bar -->
+    <nav>
+      <h1>HomeBiz Quest</h1>
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Businesses</a></li>
+          <li><a href="#">Quests</a></li>
+          <li><a href="#">Leaderboard</a></li>
+      </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+      <h2>Support Local, Earn Rewards</h2>
+      <p>Discover and support home businesses while earning XP and achievements!</p>
+      <a href="#business-list" class="cta-button">Find a Business</a>
+  </header>
+
+  <!-- Player Stats Section -->
+  <section class="player-stats">
+      <h2>Your Stats</h2>
+      <div class="stats-container">
+          <div class="stat">
+              <p>Level:</p>
+              <span id="player-level">1</span>
+          </div>
+          <div class="stat">
+              <p>XP:</p>
+              <span id="player-xp">0</span>
+          </div>
+          <div class="stat">
+              <p>Role:</p>
+              <span id="player-role">Explorer</span>
+          </div>
+          <div class="stat">
+              <p>Achievements:</p>
+              <ul id="player-achievements">
+                  <li>First Visit</li>
+              </ul>
+          </div>
+      </div>
+  </section>
+
+  <!-- Business Discovery Section -->
+  <section id="business-list">
+      <h2>Explore Local Businesses</h2>
+      <p>Find a home business near you and earn rewards for supporting them!</p>
+      <!-- Business listings will go here -->
+  </section>
   </body>
 </html>
