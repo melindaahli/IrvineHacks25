@@ -6,7 +6,7 @@ body {
   margin: 0px;
 }
 
-#header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +19,7 @@ body {
   box-sizing: border-box;
 }
 
-#header>#platform-name {
+.header>#platform-name {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
 }
