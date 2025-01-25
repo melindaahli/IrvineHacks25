@@ -20,3 +20,12 @@ function displayFlights() {
       document.getElementById("display").innerHTML = JSON.stringify(response);
     });
 }
+
+function displayLocation() {
+  fetch(WEB_INTERFACE + "/locationFromIP")
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      document.getElementById("display2").innerHTML = JSON.stringify(response);
+    });
+}
