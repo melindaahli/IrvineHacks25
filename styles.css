@@ -7,37 +7,307 @@ body {
 }
 
 #header {
-  padding: 10px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
   background: white;
   color: black;
-  font-size: 30px;
-  margin: 0;
+  font-size: 1.3em;
   width: 100vw;
   height: 80px;
+  box-sizing: border-box;
 }
 
-#header > h1 {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 0;
+#header>#platform-name {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
 }
 
-nav {
-  display: flex;
-  justify-content: space-around;
-  width: 100vw;
-  margin: 5px 0 5px;
+.profile-link {
+  border: none;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+  vertical-align: middle;
 }
 
-nav > div.nav-item {
+.profile-link:hover {
+  background-color: #abc3d4;
+}
+
+/* Player Stats Box */
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* Evenly space the child elements */
+  align-items: center; /* Vertically center child elements */
+  border: 0px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  height: 100%; /* Ensure it respects vertical alignment */
+}
+
+.profile-info,
+.progress {
+  display: flex;
+  flex-direction: column;
+  /* Stack child elements vertically */
+  align-items: center;
+  /* Center them horizontally */
+  justify-content: center;
+  /* Center them vertically */
+}
+
+
+/* From Uiverse.io by alexruix */
+.searchbar{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  width: 50em;
+  margin-top: 50px;
+
+}
+
+.input {
+  width: 100%;
+  height: 55px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: .3s ease;
+}
+
+.search-button {
+  height: 55px;
+  margin-top: 50px;
+  margin-left: 20px;
+  padding-inline: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(160, 198, 245);
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(76, 200, 234, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(74, 192, 224, 0.4);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+}
+
+
+.profile-info {
+  margin-right: 2em;
+}
+
+.player-stats-box h2 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+
+.stat {
+  margin-bottom: 5px;
+}
+
+.stat p {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* .stat span, .stat ul {
+  
+} */
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: center;
+  width: 40vw;
+  margin: 5px 0 5px;
+  text-decoration: none;
+}
+
+nav>div.nav-item {
   width: 25%;
   background-color: white;
   font-size: 20px;
-  /* border: 2px red solid; */
   text-align: center;
+  text-decoration: none;
 }
 
+a:link, a:visited {
+  color: inherit; /* Keeps the text color consistent */
+  text-decoration: none; /* Removes the underline */
+}
+
+/* Hero Section */
+header.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.hero h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional Styles (if any) */
+
+/* Ensure the player stats box doesn't overflow the header */
+
+
+
+
+/* Catagory Section */
+/* Category Card */
+
+.catagories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 50px;
+  margin-bottom: 30px;
+}
+
+.category-card {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+}
+
+.card-image {
+  height: 160px;
+  background-color: #ccc;
+  /* Placeholder for image */
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 10px 0 3px 0;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+}
+
+.card-action {
+  padding: 16px;
+  padding-top: 0;
+  /* text-align: center; */
+}
+
+.card-action button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-action button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-action button:focus,
+.card-action button:active {
+  opacity: 0.85;
+  box-shadow: none;
+}
+
+@media (max-width: 1000px) {
+
+  .catagories {
+    flex-direction: column;
+    align-items: center;
+    /* Center the cards horizontally */
+    padding: 10px 50px;
+  }
+
+  .category-card {
+    width: 90%;
+    /* Adjust card width for smaller screens */
+    margin: 10px 0;
+    /* Add space between cards */
+  }
+}
+
+@media (max-width: 600px) {
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .player-stats-box {
+    margin-top: 10px;
+  }
+}
 .align-center {
   margin: 0 auto;
   text-align: center;
