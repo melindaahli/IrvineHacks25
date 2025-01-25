@@ -8,22 +8,22 @@
     <script src="./script.js"></script>
   </head>
   <body onload="displayFlights()">
-    FLIGHTS:
+    <div id="header">
+      <h1 id="platform-name">PutMeOn</h1>
+    </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-item"><a href="index.html">Home</a></div>
+        <div class="nav-item"><a href="businessListings.html">Businesses</a></div>
+        <div class="nav-item"><a href="addBusiness.html">Add</a></div>
+        <div class="nav-item"><a href="profile.html">Me</a></div>
+    </nav>
+
+  FLIGHTS:
     <div id="display"></div>
 
     <input type="text" id="user-input" />
     <button onclick="addFlight()">add flight</button>
-    
-    <!-- Navigation Bar -->
-    <nav>
-      <h1>HomeBiz Quest</h1>
-      <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Businesses</a></li>
-          <li><a href="#">Quests</a></li>
-          <li><a href="#">Leaderboard</a></li>
-      </ul>
-  </nav>
 
   <!-- Hero Section -->
   <header class="hero">
