@@ -1,10 +1,7 @@
 WEB_INTERFACE = "http://127.0.0.1:5000"
 
 document.addEventListener('DOMContentLoaded', () => {
-    const jsonCoords = getCoords(); // Safely call getCoords after the DOM is loaded
-    var latitude = jsonCoords.Latitude
-    var longitude = jsonCoords.Longitude
-    displayMap(latitude, longitude)  // might have problem if no return value from python flask file -> try and catch fix later
+    getCoords() // Safely call getCoords after the DOM is loaded
   });
 
 
@@ -12,8 +9,13 @@ function getCoords() {
     fetch(WEB_INTERFACE + "/locationFromIP")
     .then((response) => response.json())
     .then((response) => {
-      console.log(response)
+        
+    var latitude = response.Latitude
+    var longitude = response.Longitude
+    displayMap(latitude, longitude)  // might have problem if no return value from python flask file -> try and catch fix later
+    
     });
+    
 }
 
 function displayMap(latitude, longitude) {
@@ -24,9 +26,13 @@ function displayMap(latitude, longitude) {
         })
 
     ourMap.addTo(map);
-
+    
+    displayUserMarker(latitude, longitude, map)
+}
+function displayUserMarker(latitude, longitude, map) {
+    L.marker([latitude, longitude]).addTo(map)
+        .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+        .openPopup(); 
 }
 
-/*L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-    .openPopup(); */
+
