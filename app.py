@@ -1,10 +1,10 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 import requests
 import socket
 from urllib.parse import urlencode
 import json
-import Business
+from Business import Business
 
 app = Flask(__name__)
 CORS(app)
@@ -59,33 +59,37 @@ def addressDetails():
 def businessDetails(businessID):
     business = businesses['businessID']
     return jsonify({"name": business.name,
-                    "owner-name": business.owner_name,
+                    "owner_name": business.owner_name,
                     "description": business.description,
                     "category": business.category,
                     "address": business.address,
                     "rating": business.rating,
-                    "review-count": business.review_count,
+                    "review_count": business.review_count,
                     "phone": business.phone,
                     "website": business.website,
-                    "social-media": business.social_media_links,
-                    "opening-hours": business.opening_hours,
+                    "social_media": business.social_media_links,
+                    "opening_hours": business.opening_hours,
                     "images": business.images
                     })
 
 @app.route("/submitBusinessData", methods = ['POST'])
 def submitBusinessData():
-    items = request.form.items()
+    global business_count 
+    global businesses
+    items = request.form.to_dict()
+    print(items, business_count, businesses)
     business_to_add = Business(items["name"],
-                               items["owner-name"],
+                               items["owner_name"],
                                items["description"],
                                items["category"],
                                items["address"],
                                items["phone"],
                                items["website"],
-                               items["social-media"],
-                               items["opening-hours"])
-    businesses[f'{business_count}': business_to_add]
+                               items["social_media_links"],
+                               items["opening_hours"])
+    businesses[f"{business_count}"] = business_to_add
     business_count += 1
+    return ""
 
 
 if __name__ == "__main__":
