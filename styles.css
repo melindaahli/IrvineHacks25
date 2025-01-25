@@ -140,6 +140,7 @@ input:hover {
   font-weight: bold;
 }
 
+
 /* .stat span, .stat ul {
   
 } */
@@ -168,14 +169,19 @@ a:link, a:visited {
 
 /* Hero Section */
 header.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   padding: 50px 20px;
   background-color: #ffffff;
+
 }
 
 .hero h2 {
-  font-size: 2em;
+  font-size: 1.7em;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .hero p {
@@ -189,6 +195,7 @@ header.hero {
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  margin-top: 10px;
 }
 
 .cta-button:hover {
@@ -278,6 +285,19 @@ header.hero {
 .card-action button:active {
   opacity: 0.85;
   box-shadow: none;
+}
+
+#business-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#business-list h2 {
+  margin-bottom: 0;
+  
 }
 
 @media (max-width: 1000px) {
