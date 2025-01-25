@@ -13,8 +13,6 @@ body {
   color: black;
   font-size: 30px;
   margin: 0;
-  /* margin: -50px 0 0 -10px; */
-  /* position: sticky; */
   width: 100vw;
   height: 80px;
 }
@@ -38,4 +36,31 @@ nav > div.nav-item {
   font-size: 20px;
   /* border: 2px red solid; */
   text-align: center;
+}
+
+.align-center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#add-business-form {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+#add-business-form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 10px;
+}
+
+#add-business-form > div > label {
+  font-weight: bold;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
 }
