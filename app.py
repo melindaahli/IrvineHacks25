@@ -4,11 +4,14 @@ import requests
 import socket
 from urllib.parse import urlencode
 import json
+import Business
 
 app = Flask(__name__)
 CORS(app)
 
 flights = []
+businesses = dict()
+business_count = 0
 
 # server is hosted
 @app.route("/")
@@ -51,6 +54,39 @@ def addressDetails():
             
     except requests.exceptions.RequestException as e:
         return jsonify({"error": url + str(e)})
+    
+@app.route("/businessDetails/<businessID>")
+def businessDetails(businessID):
+    business = businesses['businessID']
+    return jsonify({"name": business.name,
+                    "owner-name": business.owner_name,
+                    "description": business.description,
+                    "category": business.category,
+                    "address": business.address,
+                    "rating": business.rating,
+                    "review-count": business.review_count,
+                    "phone": business.phone,
+                    "website": business.website,
+                    "social-media": business.social_media_links,
+                    "opening-hours": business.opening_hours,
+                    "images": business.images
+                    })
+
+@app.route("/submitBusinessData", methods = ['POST'])
+def submitBusinessData():
+    items = request.form.items()
+    business_to_add = Business(items["name"],
+                               items["owner-name"],
+                               items["description"],
+                               items["category"],
+                               items["address"],
+                               items["phone"],
+                               items["website"],
+                               items["social-media"],
+                               items["opening-hours"])
+    businesses[f'{business_count}': business_to_add]
+    business_count += 1
+
 
 if __name__ == "__main__":
     app.run()
