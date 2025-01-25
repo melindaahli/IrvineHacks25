@@ -1,0 +1,291 @@
+body {
+    background-color: gray;
+    color: black;
+    padding: 0;
+    overflow-x: hidden;
+    margin: 0px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    color: black;
+    font-size: 1.3em;
+    width: 100vw;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+#header>#platform-name {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.header{
+    margin-left: 5em;
+    font-size: 1.2em;
+}
+
+.profile-link {
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.profile-link:hover {
+    background-color: #abc3d4;
+}
+
+/* Player Stats Box */
+.stats-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* Evenly space the child elements */
+    align-items: center;
+    /* Vertically center child elements */
+    border: 0px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    height: 100%;
+    /* Ensure it respects vertical alignment */
+}
+
+.profile-info,
+.progress {
+    display: flex;
+    flex-direction: column;
+    /* Stack child elements vertically */
+    align-items: center;
+    /* Center them horizontally */
+    justify-content: center;
+    /* Center them vertically */
+}
+
+
+/* From Uiverse.io by alexruix */
+.searchbar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    width: 50em;
+    margin-top: 50px;
+
+}
+
+.input {
+    width: 100%;
+    height: 55px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+}
+
+.search-button {
+    height: 55px;
+    margin-top: 50px;
+    margin-left: 20px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(160, 198, 245);
+}
+
+.input::placeholder {
+    color: #9e9ea7;
+}
+
+.input:focus,
+input:hover {
+    outline: none;
+    border-color: rgba(76, 200, 234, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(74, 192, 224, 0.4);
+}
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+}
+
+
+.profile-info {
+    margin-right: 2em;
+}
+
+.player-stats-box h2 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.stat {
+    margin-bottom: 5px;
+}
+
+.stat p {
+    margin: 0;
+    font-weight: bold;
+}
+
+
+/* .stat span, .stat ul {
+    
+  } */
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    margin: 5px 0 5px;
+    text-decoration: none;
+}
+
+nav>div.nav-item {
+    width: 25%;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+a:link,
+a:visited {
+    color: inherit;
+    /* Keeps the text color consistent */
+    text-decoration: none;
+    /* Removes the underline */
+}
+
+.flight-choice{
+    display: flex;
+    justify-content: space-between;
+    margin: 3em 5em;
+    padding: 1.3em 1.7em;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.flight-results{
+    display: flex;
+    justify-content: space-between;
+    margin: 3em 5em;
+    padding: 1.3em 1.7em;
+    border: 1px solid #ccc;
+    border-radius: 15px; 
+}
+
+.flight {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.airline {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-weight: bold;
+    justify-content: center;
+    
+}
+
+.flight-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.flight-info .row {
+    margin: 5px 0; /* Add some spacing between rows */
+}
+
+.duration {
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.airline-title{
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.duration-literal{
+    font-weight: 400;
+}
+
+/* Container for all search results */
+.search-result-container {
+    display: flex;
+    flex-wrap: wrap;           /* Allows wrapping to next line for multiple rows */
+    justify-content: space-between;
+    margin: 2em 5em;
+    gap: 2em;                  /* Spacing between result boxes */
+}
+
+/* Individual result box */
+.result-box {
+    display: flex;             /* So image and text are side by side */
+    width: calc(50% - 2em);    /* Roughly half the container width */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+/* Placeholder for the business image */
+.img-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;    /* Gray box as placeholder */
+    margin-right: 1em;
+    border-radius: 5px;
+}
+
+/* The text/info section */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.business-name {
+    margin: 0 0 0.5em 0;
+    font-size: 1.2em;
+}
+
+.category-distance,
+.status-rating {
+    margin: 0.3em 0;
+}
+
+.star {
+    color: goldenrod; /* Or any color you prefer for the star icon */
+}
