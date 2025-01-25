@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,6 +18,83 @@
         <div class="nav-item"><a href="addBusiness.html">Add</a></div>
         <div class="nav-item"><a href="profile.html">Me</a></div>
     </nav>
-    add business page
+    <h2 class="align-center">add your home business</h2>
+    <section class="form-container">
+        <form id="add-business-form" method="post">
+            <!-- Business Name -->
+            <div>
+                <label for="name">Business Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Owner Name -->
+             <div>
+                <label for="owner_name">Owner Name:</label>
+                <input type="text" id="owner_name" name="owner_name" required>
+             </div>
+            
+            <!-- Business Category -->
+             <div>
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="Haircuts">Haircuts</option>
+                    <option value="Tattoos">Tattoos</option>
+                    <option value="Piercings">Piercings</option>
+                    <option value="Food">Food</option>
+                    <option value="Beverages">Beverages</option>
+                    <option value="Handmade Crafts">Handmade Crafts</option>
+                    <option value="Art">Art</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <!-- Business Description -->
+             <div>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+             </div>
+
+            <!-- Business Address -->
+             <div>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+             </div>
+            
+
+            <!-- Contact Information -->
+             <div>
+                <label for="phone">Phone (optional):</label>
+                <input type="tel" id="phone" name="phone">
+             </div>
+            <div>
+                <label for="website">Website (optional):</label>
+                <input type="url" id="website" name="website">
+            </div>
+
+            <!-- Social Media Links -->
+            <div>
+                <label for="social_media_links">Social Media Links (comma-separated):</label>
+                <input type="text" id="social_media_links" name="social_media_links" placeholder="e.g. https://instagram.com/mybusiness, https://facebook.com/mybusiness">
+            </div>
+            
+            <!-- Opening Hours -->
+             <div>
+                <label for="opening_hours">Opening Hours:</label>
+                <textarea id="opening_hours" name="opening_hours" rows="2" placeholder="e.g. Mon-Fri: 10 AM - 8 PM, Sat: 12 PM - 5 PM"></textarea>
+            </div>
+            
+            <!-- Upload Business Images -->
+             <!-- <div>
+                <label for="images">Upload Business Images:</label>
+                <input type="file" id="images" name="images" accept="image/*" multiple>
+                <!-- <div id="image-preview"></div> -->
+            <!-- </div> -->
+            <!-- Preview Uploaded Images -->
+            
+            <!-- Submit Button -->
+            <button type="submit" onclick="addBusiness()">Submit Business</button>
+
+        </form>
+    </section>
 </body>
 </html>
