@@ -7,13 +7,19 @@ import json
 from Business import Business
 import sample_businesses
 import re
+import random
+import math
+
 
 app = Flask(__name__)
 CORS(app)
 
+# Radius of Earth in kilometers
+EARTH_RADIUS_KM = 6371.0
+
 flights = []
 businesses = sample_businesses.businesses
-business_count = 0
+business_count = len(businesses)
 
 # server is hosted
 @app.route("/")
@@ -82,24 +88,65 @@ def businessDetails(businessID):
 def submitBusinessData():
     global business_count 
     global businesses
-    # data = request.get_json()
-    data = request.form.to_dict()
-    print(data, business_count, businesses)
     
-    # business_to_add = Business(
-    #     name=data["name"],
-    #     owner_name=data["owner_name"],
-    #     description=data["description"],
-    #     category=data["category"],
-    #     address=data["address"],
-    #     phone=data.get("phone", ""),
-    #     website=data.get("website", ""),
-    #     social_media_links=data.get("social_media_links", "").split(","),
-    #     opening_hours=data.get("opening_hours", "")
-    # )
-    # businesses.append(business_to_add)
-    # business_count += 1
+    data = request.form.to_dict()
+    # print(data, business_count, businesses)
+
+    random_coords = generate_random_location(33.649363, -117.842565, 5)
+    
+    business_to_add = Business(
+        name=data["name"],
+        owner_name=data["owner_name"],
+        description=data["description"],
+        category=data["category"],
+        address=data["address"], 
+        latitude=random_coords[0],
+        longitude=random_coords[1],
+        phone=data.get("phone", ""),
+        website=data.get("website", ""),
+        social_media_links=data.get("social_media_links", "").split(","),
+        opening_hours=data.get("opening_hours", "")
+    )
+
+    business_count += 1
+    businesses[f'{business_count}'] = business_to_add
+
+    print(businesses, business_count, len(businesses))
+
     return jsonify({"success": True, "new-business": data})
+
+
+
+# Function to generate random coordinates within a given radius
+def generate_random_location(lat, lon, radius_km):
+    # Convert latitude and longitude from degrees to radians
+    lat_rad = math.radians(lat)
+    lon_rad = math.radians(lon)
+
+    # Generate a random distance and angle
+    random_distance = random.uniform(0, radius_km)  # random distance in km
+    random_angle = random.uniform(0, 2 * math.pi)  # random angle in radians
+
+    # Calculate the new latitude and longitude in radians
+    new_lat_rad = lat_rad + (random_distance / EARTH_RADIUS_KM)
+    new_lon_rad = lon_rad + (random_distance / EARTH_RADIUS_KM) / math.cos(lat_rad)
+
+    # Convert the new coordinates back to degrees
+    new_lat = math.degrees(new_lat_rad)
+    new_lon = math.degrees(new_lon_rad)
+
+    # Make sure the generated latitude and longitude are within valid ranges
+    if new_lat > 90:
+        new_lat = 90
+    if new_lat < -90:
+        new_lat = -90
+
+    if new_lon > 180:
+        new_lon = 180
+    if new_lon < -180:
+        new_lon = -180
+
+    return new_lat, new_lon
 
 
 # @app.route("/passbackBusinessData", methods = ['POST'])
@@ -108,7 +155,6 @@ def submitBusinessData():
 #     filtered_businesses = dict()
     # for business in current_businesses:
 
-    
 
 @app.route("/searchBusinesses/<search_query>")
 def searchBusinesses(search_query):
@@ -122,8 +168,6 @@ def searchBusinesses(search_query):
             results.append(business)
 
     return results
-
-
 
 
 if __name__ == "__main__":
