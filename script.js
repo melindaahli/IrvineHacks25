@@ -96,6 +96,7 @@ function display() {
 function search() {
   query = document.getElementById("user-input").value
   encoded_query = encodeURIComponent(query);
+  
   fetch(HOST + "/searchBusinesses/" + encoded_query)
     .then((response) => response.json())
     .then((response) => {
