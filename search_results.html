@@ -7,10 +7,13 @@
   <title>home businesses locator</title>
   <link rel="stylesheet" type="text/css" href="./search_results.css" />
   <script src="./script.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="header">
+      <a href="index.html">
         <h1 class="platform-name">PutMeOn</h1>
+      </a>
         <!-- <nav>
           <div class="nav-item"><a href="index.html">Home</a></div>
           <div class="nav-item"><a href="businessListings.html">Businesses</a></div>
@@ -28,30 +31,31 @@
       </div>
     
         <!-- Player Stats Box -->
-        <button class = "profile-link">
-          <div class="player-stats-box">
-            <div class="stats-container">
-    
-              <div class="profile-info">
-                <div class="stat">
-                  <p>Darren Zhao</p>
-                  <span id="player-level">Level 5, 500 Points </span>
+        <a href="profile.html">
+          <button class="profile-link">
+            <div class="player-stats-box">
+              <div class="stats-container">
+                <div class="profile-info">
+                  <div class="stat">
+                    <p>Darren Zhao</p>
+                    <span id="player-level">Level 5, 550 Points </span>
+                  </div>
+  
+                  <!-- <div class="stat">
+              <p>XP:</p>
+              <span id="player-xp">0</span>
+            </div> -->
                 </div>
-    
-                <!-- <div class="stat">
-                <p>XP:</p>
-                <span id="player-xp">0</span>
-              </div> -->
-              </div>
-              <div class="progress">
-                <div class="stat">
-                  <p>Role:</p>
-                  <span id="player-role">Explorer</span>
+                <div class="progress">
+                  <div class="stat">
+                    <p>Role:</p>
+                    <span id="player-role">Explorer</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </button>
+          </button>
+        </a>
       </div>
     <!-- Existing header, nav, etc. -->
 
@@ -73,6 +77,11 @@
                     category &bull; dist
                 </p>
             </div>
+            <a href="businessProfile.html">
+              <button class = "businessProfile">
+                View
+              </button>
+            </a>
         </div>
 
         <!-- Box 2 -->

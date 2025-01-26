@@ -175,5 +175,27 @@ def searchBusinesses(search_query):
 
     return jsonify({'results': results})
 
+@app.route("/distanceFinder/<search_query>")
+def getMileDistance(search_query):
+    search_query = unquote(search_query)
+    lat1 = math.radians(search_query[0])
+    lat2 = math.radians(search_query[1])
+    lon1 = math.radians(search_query[2])
+    lon2 = math.radians(search_query[3])
+
+    delta_lat = abs(lat2 - lat1)
+    delta_lon = abs(lon2 - lon1)
+
+    a = math.sin(delta_lat / 2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(delta_lon / 2)**2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    # Earth's radius in miles
+    R = 3959
+
+    # Calculate the distance
+    distance = R * c
+
+    return jsonify({'distance': distance})
+
 if __name__ == "__main__":
     app.run()

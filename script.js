@@ -1,5 +1,29 @@
 HOST = "http://127.0.0.1:5000"
-current_search = "hi"
+
+function doImmediately() {
+  $(".search-screen").hide();
+}
+
+function addFlight() {
+  let userInput = document.getElementById("user-input").value;
+  //   console.log("hello");
+  fetch(HOST + "/addFlight/" + userInput)
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+
+      displayFlights();
+    });
+}
+
+function displayFlights() {
+  fetch(HOST + "/getFlights")
+    .then((response) => response.json())
+    .then((response) => {
+      //   console.log(response);
+      document.getElementById("display").innerHTML = JSON.stringify(response);
+    });
+}
 
 function getAllBusinesses() {
   return fetch(HOST + "/getAllBusinesses")
@@ -11,10 +35,24 @@ function getAllBusinesses() {
     .catch((error) => console.error("Error:", error));
 }
 
-// to use:
-// getAllBusinesses().then((businesses) => {
-//   console.log("Businesses:", businesses);
+// async function fetchBusinessData() {
+//   try {
+//     const businesses = await getAllBusinesses();  // Waits for the Promise to resolve
+//     console.log(businesses);  // Now you can use the fetched data
+//     return businesses;
+//   } catch (error) {
+//     console.error("Error fetching businesses:", error);
+//   }
+// }
+
+// fetchBusinessData().then(businesses => {
+//   $( ".search-result-container" ).append( "<p>business#</p>" );
 // });
+
+function onSearchBtnClicked(){
+  $(".home-screen").hide();
+  $(".search-screen").show();
+}
 
 function addBusiness() {
   const formData = new FormData();
@@ -40,6 +78,7 @@ function displayLocation() {
     .then((response) => {
       console.log(response);
       document.getElementById("display2").innerHTML = JSON.stringify(response);
+      return response
     });
 }
 
@@ -55,7 +94,23 @@ function display() {
 function search() {
   query = document.getElementById("user-input").value
   encoded_query = encodeURIComponent(query);
+  
   fetch(HOST + "/searchBusinesses/" + encoded_query)
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response)
+      document.getElementById("display").innerHTML = JSON.stringify(response);
+    });
+}
+
+function getDistance(to_lat, to_lon){
+  curr_lat = displayLocation()['Latitude'];
+  curr_lon = displayLocation()['Longitude'];
+
+  query = "" + curr_lat + " " + curr_lon + " " + to_lat + " " + to_lon
+  encoded_query = encodeURIComponent(query)
+
+  fetch(HOST + "/getMileDistance/" + encoded_query)
     .then((response) => response.json())
     .then((response) => {
       console.log(response)
