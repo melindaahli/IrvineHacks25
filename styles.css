@@ -5,6 +5,7 @@ body {
   overflow-x: hidden;
   margin: 0px;
   font-family: "Inter", serif;
+  overflow-x: hidden;
 }
 
 .header {
