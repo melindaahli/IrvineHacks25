@@ -339,5 +339,9 @@ nav>div.nav-item {
 a:link, a:visited {
     color: inherit; /* Keeps the text color consistent */
     text-decoration: none; /* Removes the underline */
-  }
-  
+}
+
+.leave-a-review {
+    display: flex;
+    flex-direction: column;
+}
