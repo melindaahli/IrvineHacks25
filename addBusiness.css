@@ -9,11 +9,11 @@
 
 /* Body Styling */
 body {
-    font-family: 'Nunito', sans-serif;
     color: #384047;
     margin: 0;
     padding: 0;
     background-color: #f4f7f8;
+    font-family: "Inter", serif;
 }
 
 /* Header Styling */
@@ -22,7 +22,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: white;
+    background: #d3e8b7;
     color: black;
     font-size: 1.3em;
     width: 100vw;
