@@ -5,13 +5,14 @@ import socket
 from urllib.parse import urlencode
 import json
 from Business import Business
+import sample_businesses
 import re
 
 app = Flask(__name__)
 CORS(app)
 
 flights = []
-businesses = dict()
+businesses = sample_businesses.businesses
 business_count = 0
 
 # server is hosted
@@ -111,12 +112,13 @@ def submitBusinessData():
 
 @app.route("/searchBusinesses/<search_query>")
 def searchBusinesses(search_query):
-    pattern = re.compile(re.escape(search_query), re.IGNORECASE)
+    words = search_query.split()
+    pattern = re.compile(r'|'.join([re.escape(word) for word in words]), re.IGNORECASE)
 
     results = []
 
     for business_id, business in businesses.items():
-        if pattern.search(business.description()):
+        if pattern.search(business.description):
             results.append(business)
 
     return results
