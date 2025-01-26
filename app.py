@@ -5,6 +5,7 @@ import socket
 from urllib.parse import urlencode
 import json
 from Business import Business
+import re
 
 app = Flask(__name__)
 CORS(app)
@@ -107,6 +108,20 @@ def submitBusinessData():
     # for business in current_businesses:
 
     
+
+@app.route("/searchBusinesses/<search_query>")
+def searchBusinesses(search_query):
+    pattern = re.compile(re.escape(search_query), re.IGNORECASE)
+
+    results = []
+
+    for business_id, business in businesses.items():
+        if pattern.search(business.description()):
+            results.append(business)
+
+    return results
+
+
 
 
 if __name__ == "__main__":
