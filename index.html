@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PutMeOn</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./search_results.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
   </head>
 
-  <body>
+  <body onload="doImmediately()">
     <!-- Header Section -->
     <div class="header">
       <h1 class="platform-name">PutMeOn</h1>
@@ -34,9 +36,9 @@
             id="user-input"
           />
         </div>
-        <a href="search_results.html">
-          <button class="search-button">Search</button>
-        </a>
+        <!-- <a href="search_results.html"> -->
+          <button class="search-button" onclick="onSearchBtnClicked()">Search</button>
+        <!-- </a> -->
       </div>
 
       <!-- Player Stats Box -->
@@ -78,7 +80,7 @@
     </div>
     <button class = "search-button" onclick="getBusinessSearch()">Search</button>
   </div> -->
-
+    <div class="home-screen">
     <div class="catagories">
       <div class="category-card">
         <div class="card-image"></div>
@@ -181,6 +183,46 @@
           <button>Read More</button>
         </div>
       </div>
+    </div>
+    </div>
+    
+    <div class="search-screen">
+      <div class="header">
+          <h1>Your search results</h1>
+      </div>
+
+      <!-- New container for search results -->
+      <div class="search-result-container">
+          <!-- Box 1 -->
+          <div class="result-box">
+              <div class="img-placeholder"></div>
+              <div class="info-section">
+                  <h2 class="business-name">BUSINESS_NAME</h2>
+                  <p class="status-rating">
+                      status &bull; <span class="star">&#9733; #.#</span>
+                  </p>
+                  <p class="category-distance">
+                      category &bull; dist
+                  </p>
+              </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="result-box">
+              <div class="img-placeholder"></div>
+                <div class="info-section">
+                    <h2 class="business-name">BUSINESS_NAME</h2>
+                    <p class="status-rating">
+                        status &bull; <span class="star">&#9733; #.#</span>
+                    </p>
+                    <p class="category-distance">
+                        category &bull; dist
+                    </p>
+                </div>
+              </div>
+          </div>
+          <!-- You can repeat more result-boxes as needed -->
+        </div>
     </div>
   </body>
 </html>

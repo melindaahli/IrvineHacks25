@@ -1,5 +1,10 @@
 HOST = "http://127.0.0.1:5000"
 
+function doImmediately() {
+  $(".search-screen").hide();
+}
+
+
 function addFlight() {
   let userInput = document.getElementById("user-input").value;
   //   console.log("hello");
@@ -31,10 +36,26 @@ function getAllBusinesses() {
     .catch((error) => console.error("Error:", error));
 }
 
-// to use:
-// getAllBusinesses().then((businesses) => {
-//   console.log("Businesses:", businesses);
+// async function fetchBusinessData() {
+//   try {
+//     const businesses = await getAllBusinesses();  // Waits for the Promise to resolve
+//     console.log(businesses);  // Now you can use the fetched data
+//     return businesses;
+//   } catch (error) {
+//     console.error("Error fetching businesses:", error);
+//   }
+// }
+
+// fetchBusinessData().then(businesses => {
+//   $( ".search-result-container" ).append( "<p>business#</p>" );
 // });
+
+function onSearchBtnClicked(){
+  $(".home-screen").hide();
+  $(".search-screen").show();
+
+}
+
 
 function addBusiness() {
   const formData = new FormData();
