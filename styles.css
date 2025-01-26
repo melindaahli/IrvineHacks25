@@ -65,15 +65,15 @@ body {
 .searchbar{
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
 }
 .group {
   display: flex;
+  align-items: center;
+  justify-content: center;
   line-height: 28px;
   align-items: center;
   position: relative;
-  width: 50em;
-  margin-top: 50px;
+  width: 30em;
 
 }
 
@@ -93,7 +93,6 @@ body {
 
 .search-button {
   height: 55px;
-  margin-top: 50px;
   margin-left: 20px;
   padding-inline: 20px;
   border-radius: 10px;
