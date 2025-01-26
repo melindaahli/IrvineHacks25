@@ -21,6 +21,21 @@ function displayFlights() {
     });
 }
 
+function getAllBusinesses() {
+  return fetch(HOST + "/getAllBusinesses")
+    .then((response) => response.json()) // Parse JSON
+    .then((data) => {
+      console.log(data);
+      return data; // Return the fetched data
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
+// to use:
+// getAllBusinesses().then((businesses) => {
+//   console.log("Businesses:", businesses);
+// });
+
 function addBusiness() {
   const formData = new FormData();
   formData.append('name', document.getElementById("name").value);
@@ -48,13 +63,11 @@ function displayLocation() {
     });
 }
 
-function getBusinessSearch(search_query){
-  encoded_query = encodeURIComponent(search_query)
-
-  fetch(HOST + "/searchBusinesses/" + encoded_query)
+function display() {
+  fetch(HOST + "/getFlights")
     .then((response) => response.json())
     .then((response) => {
-      console.log('sehfoehfsef')
-      console.log(response);
+      //   console.log(response);
+      document.getElementById("display").innerHTML = JSON.stringify(response);
     });
 }
