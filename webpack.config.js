@@ -1,10 +1,24 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js", // Entry point for your app
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js", // Output bundle
+    path: path.resolve(__dirname, "dist"), // Output folder
+    filename: "bundle.js", // Output file name
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html", // Source HTML file
+      filename: "index.html", // Output HTML file in 'dist'
+    }),
+  ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    port: 3000,
+    open: true,
   },
   module: {
     rules: [
@@ -13,14 +27,14 @@ module.exports = {
         exclude: /node_modules/,
         use: "babel-loader",
       },
+      {
+        test: /\.css$/, // Match CSS files
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx"], // Resolve these extensions
   },
-  devServer: {
-    static: "./dist", // Serve from dist folder
-    port: 3000,
-  },
-  mode: "development",
+  mode: "development", // Set development mode
 };
