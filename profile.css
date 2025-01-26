@@ -1,0 +1,336 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    color: black;
+    font-size: 1.3em;
+    width: 100vw;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+.header>#platform-name {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.profile-link {
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.profile-link:hover {
+    background-color: #abc3d4;
+}
+
+/* Player Stats Box */
+.stats-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* Evenly space the child elements */
+    align-items: center;
+    /* Vertically center child elements */
+    border: 0px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    height: 100%;
+    /* Ensure it respects vertical alignment */
+}
+
+.profile-info,
+.progress {
+    display: flex;
+    flex-direction: column;
+    /* Stack child elements vertically */
+    align-items: center;
+    /* Center them horizontally */
+    justify-content: center;
+    /* Center them vertically */
+}
+
+
+/* From Uiverse.io by alexruix */
+.searchbar {
+    display: flex;
+    justify-content: center;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    width: 30em;
+
+}
+
+.input {
+    width: 100%;
+    height: 55px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+}
+
+.search-button {
+    height: 55px;
+    margin-left: 20px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(160, 198, 245);
+}
+
+.input::placeholder {
+    color: #9e9ea7;
+}
+
+.input:focus,
+input:hover {
+    outline: none;
+    border-color: rgba(76, 200, 234, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(74, 192, 224, 0.4);
+}
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+}
+
+
+.profile-info {
+    margin-right: 2em;
+}
+
+.player-stats-box h2 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.stat {
+    margin-bottom: 5px;
+}
+
+.stat p {
+    margin: 0;
+    font-weight: bold;
+}
+
+
+/* .stat span, .stat ul {
+    
+  } */
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    margin: 5px 0 5px;
+    text-decoration: none;
+}
+
+nav>div.nav-item {
+    width: 25%;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Container for the new “Keep Exploring” section */
+.progress-container {
+    margin: 20px;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    font-size: 1.5em;
+    /* Just a subtle separation from header */
+}
+
+/* Points/Progress Bar */
+.points-section {
+    margin-bottom: 20px;
+}
+
+.points-text {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.progress-fill {
+    background-color: #ffcc00;
+    height: 100%;
+}
+
+/* Achievements */
+.achievements-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.checkmark {
+    color: green;
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+.circle {
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+/* “Add your business” box */
+.add-business-container {
+    margin-top: 20px;
+}
+
+.add-business-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.add-business-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container for the new “Keep Exploring” section */
+.progress-container {
+    margin: 20px;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    /* Just a subtle separation from header */
+}
+
+/* Points/Progress Bar */
+.points-section {
+    margin-bottom: 20px;
+}
+
+.points-text {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.progress-fill {
+    background-color: #ffcc00;
+    height: 100%;
+}
+
+/* Achievements */
+.achievements-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.checkmark {
+    color: green;
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+.circle {
+    margin-right: 4px;
+    font-weight: bold;
+}
+
+/* “Add your business” box */
+.add-business-container {
+    margin-top: 20px;
+}
+
+.add-business-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.add-business-button:hover {
+    background-color: #0056b3;
+}
+
+/* Container for Achievements and Stats */
+.achievements-stats-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Achievements section */
+.achievements-section {
+    width: 60%;
+}
+
+/* Stats box styling */
+.stats-box {
+    width: 35%;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.stats-box h3 {
+    margin-top: 0;
+}
+
+.stats-box p {
+    margin: 8px 0;
+    font-size: 1em;
+}

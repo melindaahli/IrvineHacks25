@@ -1,48 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Me | PutMeOn</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <script src="./script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Me | PutMeOn</title>
+  <link rel="stylesheet" type="text/css" href="./profile.css" />
+  <script src="./script.js"></script>
 </head>
 <body>
-    <div class="header">
-        <h1 class="platform-name">PutMeOn</h1>
-        <nav>
-          <div class="nav-item"><a href="index.html">Home</a></div>
-          <div class="nav-item"><a href="businessListings.html">Businesses</a></div>
-          <div class="nav-item"><a href="addBusiness.html">Add</a></div>
-          <div class="nav-item"><a href="map.html">Nearby</a></div>
-        </nav>
-    
-        <!-- Player Stats Box -->
-        <button class = "profile-link">
-          <div class="player-stats-box">
-            <div class="stats-container">
-    
-              <div class="profile-info">
-                <div class="stat">
-                  <p>Darren Zhao</p>
-                  <span id="player-level">Level 5, 500 Points </span>
-                </div>
-    
-                <!-- <div class="stat">
-                <p>XP:</p>
-                <span id="player-xp">0</span>
-              </div> -->
+  <!-- Existing header code -->
+  <div class="header">
+    <h1 class="platform-name">PutMeOn</h1>
+    <!-- <nav> ... </nav> -->
+    <div class="searchbar">
+      <div class="group">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+          <g>
+            <path
+              d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+            ></path>
+          </g>
+        </svg>
+        <input placeholder="Search" type="search" class="input" id="user-input" />
+      </div>
+      <a href="search_results.html">
+        <button class="search-button">Search</button>
+      </a>
+    </div>
+
+    <a href="profile.html">
+      <button class="profile-link">
+        <div class="player-stats-box">
+          <div class="stats-container">
+            <div class="profile-info">
+              <div class="stat">
+                <p>Darren Zhao</p>
+                <span id="player-level">Level 5, 500 Points </span>
               </div>
-              <div class="progress">
-                <div class="stat">
-                  <p>Role:</p>
-                  <span id="player-role">Explorer</span>
-                </div>
+            </div>
+            <div class="progress">
+              <div class="stat">
+                <p>Role:</p>
+                <span id="player-role">Explorer</span>
               </div>
             </div>
           </div>
-        </button>
+        </div>
+      </button>
+    </a>
+  </div>
+  <!-- End of existing header code -->
+  
+  <!-- New “Keep Exploring”/Points/Achievements container -->
+  <div class="progress-container">
+    <h2>Keep Exploring, Darren</h2>
+    
+      <div class="points-section">
+        <p class="points-text">Points (550 / 1000)</p>
+        <!-- Progress bar -->
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 55%;"></div>
+        </div>
+        <p class="points-subtext">Collect 500 more points to reach level 6</p>
       </div>
-    player profile page
+    
+      <!-- Achievements and Stats container -->
+      <div class="achievements-stats-container">
+        <div class="achievements-section">
+          <h3>Achievements</h3>
+          <ul>
+            <li><span class="checkmark">✓</span> Visit your first business</li>
+            <li><span class="checkmark">✓</span> Leave your first review</li>
+            <li><span class="checkmark">✓</span> Visit 3 businesses</li>
+            <li><span class="checkmark">✓</span> Visit 5 businesses</li>
+            <li><span class="circle">o</span> Visit 10 businesses</li>
+            <li><span class="circle">o</span> Write 5 reviews</li>
+          </ul>
+        </div>
+    
+        <!-- Stats box -->
+        <div class="stats-box">
+          <h3>Stats</h3>
+          <p>Businesses visited: <strong>5</strong></p>
+          <p>Reviews written: <strong>1</strong></p>
+        </div>
+      </div>
+    
+      <div class="add-business-container">
+        <p>Want to add your business?</p>
+        <a href = "addBusiness.html">
+          <button class="add-business-button">Add business</button>
+        </a>
+      </div>
+    </div>
+
 </body>
 </html>
