@@ -1,9 +1,14 @@
+body {
+    font-family: "Inter", serif;
+    margin: 0;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: white;
+    background: #d3e8b7;
     color: black;
     font-size: 1.3em;
     width: 100vw;
@@ -15,7 +20,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
 }
-
+.search-header {
+    margin-left: 5em;
+    margin-top: 4em;
+}
 .profile-link {
     border: none;
     border-radius: 10px;
@@ -25,7 +33,7 @@
 }
 
 .profile-link:hover {
-    background-color: #abc3d4;
+    background-color: #b9d4ab;
 }
 
 /* Player Stats Box */
@@ -93,7 +101,7 @@
     padding-inline: 20px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(160, 198, 245);
+    background-color: rgb(192, 209, 183);
 }
 
 .input::placeholder {

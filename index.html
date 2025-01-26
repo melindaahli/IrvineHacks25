@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="./search_results.css" />
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   </head>
 
   <body onload="doImmediately()">
@@ -15,11 +18,27 @@
     <div class="header">
       <h1 class="platform-name">PutMeOn</h1>
       <!-- <nav>
+=======
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>home businesses locator</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css" />
+  <script src="./script.js"></script>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <div class="header">
+    <h1 class="platform-name">PutMeOn</h1>
+    <!-- <nav>
+>>>>>>> b7dd8cf (search feature)
       <div class="nav-item"><a href="index.html">Home</a></div>
       <div class="nav-item"><a href="businessListings.html">Businesses</a></div>
       <div class="nav-item"><a href="addBusiness.html">Add</a></div>
       <div class="nav-item"><a href="map.html">Nearby</a></div>
     </nav> -->
+<<<<<<< HEAD
       <div class="searchbar">
         <div class="group">
           <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
@@ -36,10 +55,21 @@
             id="user-input"
           />
         </div>
-        <!-- <a href="search_results.html"> -->
-          <button class="search-button" onclick="onSearchBtnClicked()">Search</button>
-        <!-- </a> -->
+        <a>
+          <button class="search-button">Search</button>
+        </a>
       </div>
+=======
+    <div class = "searchbar">
+    <div class="group">
+      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+      <input placeholder="Search" type="search" class="input" id="user-input">
+    </div>
+    <a href="search_results.html"> 
+    <button class = "search-button" onclick="search()">Search</button>
+    </a> 
+  </div>
+>>>>>>> b7dd8cf (search feature)
 
       <!-- Player Stats Box -->
       <a href="profile.html">
@@ -49,7 +79,7 @@
               <div class="profile-info">
                 <div class="stat">
                   <p>Darren Zhao</p>
-                  <span id="player-level">Level 5, 500 Points </span>
+                  <span id="player-level">Level 5, 550 Points </span>
                 </div>
 
                 <!-- <div class="stat">
@@ -86,10 +116,10 @@
         <div class="card-image"></div>
         <div class="card-content">
           <h5>Food</h5>
-          <p>Find local food businesses near you</p>
+          <p>Local food businesses near you</p>
         </div>
         <div class="card-action">
-          <button>Read More</button>
+          <button>Explore</button>
         </div>
       </div>
       <div class="category-card">
@@ -99,7 +129,7 @@
           <p>Find local art businesses near you</p>
         </div>
         <div class="card-action">
-          <button>Read More</button>
+          <button>Explore</button>
         </div>
       </div>
 
@@ -110,7 +140,7 @@
           <p>See your future!</p>
         </div>
         <div class="card-action">
-          <button>Read More</button>
+          <button>Explore</button>
         </div>
       </div>
 
@@ -121,7 +151,7 @@
           <p>Find the perfect cut!</p>
         </div>
         <div class="card-action">
-          <button>Read More</button>
+          <button>Explore</button>
         </div>
       </div>
     </div>
@@ -131,7 +161,6 @@
       <p>
         Discover and support home businesses while earning XP and achievements!
       </p>
-      <a href="#business-list" class="cta-button">Find a Business</a>
     </header>
 
     <!-- Business Discovery Section -->

@@ -1,9 +1,10 @@
 body {
-  background-color: gray;
+  background-color: rgb(255, 255, 255);
   color: black;
   padding: 0;
   overflow-x: hidden;
   margin: 0px;
+  font-family: "Inter", serif;
 }
 
 .header {
@@ -11,7 +12,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: white;
+  background: #d3e8b7;
   color: black;
   font-size: 1.3em;
   width: 100vw;
@@ -33,7 +34,7 @@ body {
 }
 
 .profile-link:hover {
-  background-color: #abc3d4;
+  background-color: #b9d4ab;
 }
 
 /* Player Stats Box */
@@ -97,7 +98,7 @@ body {
   padding-inline: 20px;
   border-radius: 10px;
   border: none;
-  background-color: rgb(160, 198, 245);
+  background-color: rgb(192, 209, 183);
 }
 
 .input::placeholder {
@@ -107,9 +108,9 @@ body {
 .input:focus,
 input:hover {
   outline: none;
-  border-color: rgba(76, 200, 234, 0.4);
+  border-color: rgba(100, 210, 100, 0.4);
   background-color: #fff;
-  box-shadow: 0 0 0 3px rgba(74, 192, 224, 0.4);
+  box-shadow: 0 0 0 3px rgba(149, 224, 74, 0.4);
 }
 
 .icon {
@@ -166,14 +167,19 @@ a:link, a:visited {
   text-decoration: none; /* Removes the underline */
 }
 
+
+
 /* Hero Section */
+
+
+
 header.hero {
   display: flex;
   align-items: center;
   flex-direction: column;
   text-align: center;
   padding: 50px 20px;
-  background-color: #ffffff;
+  background-color: #d3e8b7;
 
 }
 
@@ -190,15 +196,15 @@ header.hero {
 
 .cta-button {
   padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
+  background-color: #506944;
+  color: ;
   text-decoration: none;
   border-radius: 5px;
   margin-top: 10px;
 }
 
 .cta-button:hover {
-  background-color: #0056b3;
+  background-color: #00b327;
 }
 
 /* Additional Styles (if any) */
@@ -216,8 +222,8 @@ header.hero {
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 50px;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 55px;
+  margin-top: 55px;
 }
 
 .category-card {
@@ -266,7 +272,7 @@ header.hero {
 .card-action button {
   padding: 10px 20px;
   border: none;
-  background-color: #007BFF;
+  background-color: #506944;
   color: white;
   font-size: 0.875rem;
   font-weight: bold;
@@ -277,7 +283,7 @@ header.hero {
 }
 
 .card-action button:hover {
-  background-color: #0056b3;
+  background-color: #00b327;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
