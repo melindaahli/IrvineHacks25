@@ -2,6 +2,7 @@ WEB_INTERFACE = "http://127.0.0.1:5000"
 
 document.addEventListener('DOMContentLoaded', () => {
     getCoords() // Safely call getCoords after the DOM is loaded
+    getAllBusinesses()
   });
 
 
@@ -20,20 +21,26 @@ function getCoords() {
 function displayMap(latitude, longitude) {
     var map = L.map('map').setView([latitude, longitude], 13);
 
-    var ourMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        })
+    googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3']
+    });
 
-    ourMap.addTo(map);
+    googleStreets.addTo(map)
     
-    displayUserMarker(latitude, longitude, map)
 }
 
+function getAllBusinesses() {
+    return fetch(WEB_INTERFACE + "/getAllBusinesses")
+      .then((response) => response.json()) // Parse JSON
+      .then((data) => { 
+        for (const value in Object.keys(data)) {
+            L.marker(value['latitude'], value['longitude']).addTo(map)
+                .bindPopup(value.name);
+            };
+      })
+  }
 
-function displayUserMarker(latitude, longitude, map) {
-    L.marker([latitude, longitude]).addTo(map)
-        .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-        .openPopup(); 
-}
+
 
 
