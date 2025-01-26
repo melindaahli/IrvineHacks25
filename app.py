@@ -70,7 +70,7 @@ def addressDetails():
     
 @app.route("/businessDetails/<businessID>")
 def businessDetails(businessID):
-    business = businesses['businessID']
+    business = businesses[businessID]
     return jsonify({"name": business.name,
                     "owner_name": business.owner_name,
                     "description": business.description,
