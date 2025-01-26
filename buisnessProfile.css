@@ -335,3 +335,9 @@ nav>div.nav-item {
 .review-text {
     margin: 0;
 }
+
+a:link, a:visited {
+    color: inherit; /* Keeps the text color consistent */
+    text-decoration: none; /* Removes the underline */
+  }
+  
