@@ -4,48 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a Business | PutMeOn</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./addBusiness.css" />
     <script src="./script.js"></script>
+    <!-- Include Google Fonts for 'Nunito' -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <h1 class="platform-name">PutMeOn</h1>
-        <nav>
-          <div class="nav-item"><a href="index.html">Home</a></div>
-          <div class="nav-item"><a href="businessListings.html">Businesses</a></div>
-          <div class="nav-item"><a href="addBusiness.html">Add</a></div>
-          <div class="nav-item"><a href="map.html">Nearby</a></div>
-        </nav>
     
-        <!-- Player Stats Box -->
-        <button class = "profile-link">
-          <div class="player-stats-box">
-            <div class="stats-container">
-    
-              <div class="profile-info">
-                <div class="stat">
-                  <p>Darren Zhao</p>
-                  <span id="player-level">Level 5, 500 Points </span>
-                </div>
-    
-                <!-- <div class="stat">
-                <p>XP:</p>
-                <span id="player-xp">0</span>
-              </div> -->
-              </div>
-              <div class="progress">
-                <div class="stat">
-                  <p>Role:</p>
-                  <span id="player-role">Explorer</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </button>
-      </div>
-    <h2 class="align-center">add your home business</h2>
+
+    <h2 class="align-center">Add Your Own Business</h2>
+
     <section class="form-container">
-        <!-- <form id="add-business-form" method="post"> -->
+        <form id="add-business-form" method="post" onsubmit="addBusiness(); return false;">
             <!-- Business Name -->
             <div>
                 <label for="name">Business Name:</label>
@@ -53,13 +23,13 @@
             </div>
 
             <!-- Owner Name -->
-             <div>
+            <div>
                 <label for="owner_name">Owner Name:</label>
                 <input type="text" id="owner_name" name="owner_name" required>
-             </div>
+            </div>
             
             <!-- Business Category -->
-             <div>
+            <div>
                 <label for="category">Category:</label>
                 <select id="category" name="category">
                     <option value="Haircuts">Haircuts</option>
@@ -74,23 +44,22 @@
             </div>
             
             <!-- Business Description -->
-             <div>
+            <div>
                 <label for="description">Description:</label>
                 <textarea id="description" name="description" rows="4" required></textarea>
-             </div>
+            </div>
 
             <!-- Business Address -->
-             <div>
+            <div>
                 <label for="address">Address:</label>
                 <input type="text" id="address" name="address" required>
-             </div>
+            </div>
             
-
             <!-- Contact Information -->
-             <div>
+            <div>
                 <label for="phone">Phone (optional):</label>
                 <input type="tel" id="phone" name="phone">
-             </div>
+            </div>
             <div>
                 <label for="website">Website (optional):</label>
                 <input type="url" id="website" name="website">
@@ -103,23 +72,14 @@
             </div>
             
             <!-- Opening Hours -->
-             <div>
+            <div>
                 <label for="opening_hours">Opening Hours:</label>
                 <textarea id="opening_hours" name="opening_hours" rows="2" placeholder="e.g. Mon-Fri: 10 AM - 8 PM, Sat: 12 PM - 5 PM"></textarea>
             </div>
             
-            <!-- Upload Business Images -->
-             <!-- <div>
-                <label for="images">Upload Business Images:</label>
-                <input type="file" id="images" name="images" accept="image/*" multiple>
-                <!-- <div id="image-preview"></div> -->
-            <!-- </div> -->
-            <!-- Preview Uploaded Images -->
-            
             <!-- Submit Button -->
-            <button onclick="addBusiness()">Submit Business</button>
-
-        <!-- </form> -->
+            <button type="submit">Submit Business</button>
+        </form>
     </section>
 </body>
 </html>

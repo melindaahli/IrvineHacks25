@@ -1,0 +1,373 @@
+/* Universal Box Sizing */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: #384047;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f8;
+  }
+  
+  /* Header Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    color: black;
+    font-size: 1.3em;
+    width: 100vw;
+    height: 80px;
+    box-sizing: border-box;
+  }
+  
+  .header>#platform-name {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+  }
+  
+  /* Profile Link Styling */
+  .profile-link {
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  
+  .profile-link:hover {
+    background-color: #abc3d4;
+  }
+  
+  /* Player Stats Box */
+  .stats-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 0px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    height: 100%;
+  }
+  
+  .profile-info,
+  .progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-info {
+    margin-right: 2em;
+  }
+  
+  .player-stats-box h2 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+  }
+  
+  .stat {
+    margin-bottom: 5px;
+  }
+  
+  .stat p {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  /* Searchbar Styling */
+  .searchbar {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 28px;
+    position: relative;
+    width: 30em;
+  }
+  
+  .input {
+    width: 100%;
+    height: 55px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+  }
+  
+  .search-button {
+    height: 55px;
+    margin-left: 20px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(160, 198, 245);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: rgb(130, 178, 215);
+  }
+  
+  .input::placeholder {
+    color: #9e9ea7;
+  }
+  
+  .input:focus,
+  .input:hover {
+    outline: none;
+    border-color: rgba(76, 200, 234, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(74, 192, 224, 0.4);
+  }
+  
+  .icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  /* Navigation Bar (Commented Out) */
+  /*
+  nav {
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    margin: 5px 0 5px;
+    text-decoration: none;
+  }
+  
+  nav>div.nav-item {
+    width: 25%;
+    background-color: white;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+  }
+  */
+  
+  /* Search Results Container */
+  .search-result-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2em 5em;
+    gap: 2em;
+  }
+  
+  .result-box {
+    display: flex;
+    width: calc(50% - 2em);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1em;
+    box-sizing: border-box;
+  }
+  
+  .img-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;
+    margin-right: 1em;
+    border-radius: 5px;
+  }
+  
+  .info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .business-name {
+    margin: 0 0 0.5em 0;
+    font-size: 1.2em;
+  }
+  
+  .category-distance,
+  .status-rating {
+    margin: 0.3em 0;
+  }
+  
+  .star {
+    color: goldenrod;
+  }
+  
+  /* Form Container */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2em auto;
+    max-width: 480px;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Form Styling */
+  form {
+    width: 100%;
+  }
+  
+  h2.align-center {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5em;
+  }
+  
+  /* Input Fields */
+  input[type="text"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="time"],
+  input[type="url"],
+  textarea,
+  select {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="date"]:focus,
+  input[type="datetime"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="time"]:focus,
+  input[type="url"]:focus,
+  textarea:focus,
+  select:focus {
+    background-color: #fff;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05) inset;
+  }
+  
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin: 0 4px 8px 0;
+  }
+  
+  select {
+    padding: 6px;
+    height: 32px;
+    border-radius: 2px;
+    background-color: #e8eeef;
+    color: #8a97a0;
+  }
+  
+  /* Labels */
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  label.light {
+    font-weight: 300;
+    display: inline;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    background-color: #4bc970;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #3ac162;
+    border-width: 1px 1px 3px;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  button:hover {
+    background-color: #3ac162;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.2) inset;
+  }
+  
+  /* Fieldset and Legend */
+  fieldset {
+    margin-bottom: 30px;
+    border: none;
+  }
+  
+  legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+  
+  /* Number Badge */
+  .number {
+    background-color: #5fcf80;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 100%;
+  }
+  
+  /* Responsive Design */
+  @media screen and (min-width: 480px) {
+    form {
+      max-width: 480px;
+    }
+    
+    .form-container {
+      margin: 2em 30em;
+    }
+  }
