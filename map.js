@@ -13,10 +13,9 @@ function getCoords() {
     var latitude = response.Latitude
     var longitude = response.Longitude
     displayMap(latitude, longitude)  // might have problem if no return value from python flask file -> try and catch fix later
-    
     });
-    
 }
+
 
 function displayMap(latitude, longitude) {
     var map = L.map('map').setView([latitude, longitude], 13);
@@ -29,6 +28,8 @@ function displayMap(latitude, longitude) {
     
     displayUserMarker(latitude, longitude, map)
 }
+
+
 function displayUserMarker(latitude, longitude, map) {
     L.marker([latitude, longitude]).addTo(map)
         .bindPopup('A pretty CSS popup.<br> Easily customizable.')
