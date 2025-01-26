@@ -4,7 +4,6 @@ function doImmediately() {
   $(".search-screen").hide();
 }
 
-
 function addFlight() {
   let userInput = document.getElementById("user-input").value;
   //   console.log("hello");
@@ -53,9 +52,7 @@ function getAllBusinesses() {
 function onSearchBtnClicked(){
   $(".home-screen").hide();
   $(".search-screen").show();
-
 }
-
 
 function addBusiness() {
   const formData = new FormData();
