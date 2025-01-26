@@ -31,6 +31,10 @@ def addFlight(flightName):
     flights.append(flightName)
     return jsonify({"success": True})
 
+@app.route("/getAllBusinesses")
+def getAllBusinesses():
+    return jsonify(businesses)
+
 @app.route("/locationFromIP")
 def addressDetails():
     IPaddr = socket.gethostbyname(socket.gethostname())
@@ -76,20 +80,33 @@ def businessDetails(businessID):
 def submitBusinessData():
     global business_count 
     global businesses
-    items = request.form.to_dict()
-    print(items, business_count, businesses)
-    business_to_add = Business(items["name"],
-                               items["owner_name"],
-                               items["description"],
-                               items["category"],
-                               items["address"],
-                               items["phone"],
-                               items["website"],
-                               items["social_media_links"],
-                               items["opening_hours"])
-    businesses[f"{business_count}"] = business_to_add
-    business_count += 1
-    return ""
+    # data = request.get_json()
+    data = request.form.to_dict()
+    print(data, business_count, businesses)
+    
+    # business_to_add = Business(
+    #     name=data["name"],
+    #     owner_name=data["owner_name"],
+    #     description=data["description"],
+    #     category=data["category"],
+    #     address=data["address"],
+    #     phone=data.get("phone", ""),
+    #     website=data.get("website", ""),
+    #     social_media_links=data.get("social_media_links", "").split(","),
+    #     opening_hours=data.get("opening_hours", "")
+    # )
+    # businesses.append(business_to_add)
+    # business_count += 1
+    return jsonify({"success": True, "new-business": data})
+
+
+# @app.route("/passbackBusinessData", methods = ['POST'])
+# def filterByBusinessStatus():
+#     current_businesses = dict() # replace with filter by search query
+#     filtered_businesses = dict()
+    # for business in current_businesses:
+
+    
 
 
 if __name__ == "__main__":
