@@ -2,55 +2,134 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>home businesses locator</title>
-  <link rel="stylesheet" type="text/css" href="./buisnessProfile.css" />
-  <script src="./script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Businesses Locator</title>
+    <!-- Link to existing CSS file -->
+    <link rel="stylesheet" type="text/css" href="./buisnessProfile.css" />
+    <script src="./script.js"></script>
 </head>
+
 <body>
+    <!-- ====== Existing Header/Nav Bar (unchanged) ====== -->
     <div class="header">
-        <h1 class="platform-name">PutMeOn</h1>
-        <!-- <nav>
-          <div class="nav-item"><a href="index.html">Home</a></div>
-          <div class="nav-item"><a href="businessListings.html">Businesses</a></div>
-          <div class="nav-item"><a href="addBusiness.html">Add</a></div>
-          <div class="nav-item"><a href="map.html">Nearby</a></div>
-        </nav> -->
-        <div class = "searchbar">
-        <div class="group">
-          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
-          <input placeholder="Search" type="search" class="input" id="user-input">
-        </div>
-        <a href="search_results.html">
-        <button class = "search-button">Search</button>
+        <a href="index.html">
+            <h1 class="platform-name">PutMeOn</h1>
         </a>
-      </div>
+        <div class="searchbar">
+            <div class="group">
+                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                    <g>
+                        <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11
+                     c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9
+                     c2.215 0 4.24-.804 5.808-2.13l3.66 3.66
+                     c.147.146.34.22.53.22s.385-.073.53-.22
+                     c.295-.293.295-.767.002-1.06zM3.5 11
+                     c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 
+                     7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                        </path>
+                    </g>
+                </svg>
+                <input placeholder="Search" type="search" class="input" id="user-input">
+            </div>
+            <a href="search_results.html">
+                <button class="search-button">Search</button>
+            </a>
+        </div>
+
+        <a href="profile.html">
+            <button class="profile-link">
+              <div class="player-stats-box">
+                <div class="stats-container">
+                  <div class="profile-info">
+                    <div class="stat">
+                      <p>Darren Zhao</p>
+                      <span id="player-level">Level 5, 550 Points </span>
+                    </div>
     
-        <!-- Player Stats Box -->
-        <button class = "profile-link">
-          <div class="player-stats-box">
-            <div class="stats-container">
-    
-              <div class="profile-info">
-                <div class="stat">
-                  <p>Darren Zhao</p>
-                  <span id="player-level">Level 5, 500 Points </span>
-                </div>
-    
-                <!-- <div class="stat">
+                    <!-- <div class="stat">
                 <p>XP:</p>
                 <span id="player-xp">0</span>
               </div> -->
-              </div>
-              <div class="progress">
-                <div class="stat">
-                  <p>Role:</p>
-                  <span id="player-role">Explorer</span>
+                  </div>
+                  <div class="progress">
+                    <div class="stat">
+                      <p>Role:</p>
+                      <span id="player-role">Explorer</span>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </button>
+          </a>
+    </div>
+    <!-- ====== End Existing Header/Nav ====== -->
+
+
+    <!-- ====== Business Profile Content ====== -->
+    <div class="business-page-container">
+        <!-- Big photo placeholder -->
+        <div class="photo-section">
+            <div class="photo-placeholder">Photo Placeholder</div>
+        </div>
+
+        <!-- Business name, rating, status, distance & description -->
+        <div class="business-details">
+            <div class="left-column">
+                <h2 class="business-name">Business Name</h2>
+                <p class="rating-status">
+                    <span class="star">&#9733;</span> 5 &mdash; Open Now &mdash; 6&nbsp;mi
+                </p>
             </div>
-          </div>
-        </button>
-      </div>
+            <div class="right-column">
+                <div class="description">
+                    <p>
+                        Description filler text goes here. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Donec sit amet ornare sapien.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="reviews-section">
+            <h3>Reviews</h3>
+            <!-- Example review 1 -->
+            <div class="review-box">
+                <p class="review-rating">
+                    <span class="star">&#9733;</span> 5 &mdash; Jane
+                </p>
+                <p class="review-text">
+                    Really lovely place, great service.
+                </p>
+            </div>
+            <!-- Example review 2 -->
+            <div class="review-box">
+                <p class="review-rating">
+                    <span class="star">&#9733;</span> 5 &mdash; Meg
+                </p>
+                <p class="review-text">
+                    Would absolutely recommend to friends.
+                </p>
+            </div>
+        </div>
+        <div class = "leave-a-review">
+            <h3>Leave a Review</h3>
+            <form>
+                <div>
+                    <label for="rating">Rating:</label>
+                    <input type="number" id="rating" name="rating" min="1" max="5">
+                </div>
+                <div>
+                    <label for="review">Review:</label>
+                <div>
+                    <textarea id="review" name="review" rows="4" cols="50"></textarea>
+                </div>
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
+</html>

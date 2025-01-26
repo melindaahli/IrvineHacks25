@@ -120,6 +120,7 @@ function displayLocation() {
     .then((response) => {
       console.log(response);
       document.getElementById("display2").innerHTML = JSON.stringify(response);
+      return response
     });
 }
 
@@ -137,6 +138,21 @@ function search() {
   encoded_query = encodeURIComponent(query);
   
   fetch(HOST + "/searchBusinesses/" + encoded_query)
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response)
+      document.getElementById("display").innerHTML = JSON.stringify(response);
+    });
+}
+
+function getDistance(to_lat, to_lon){
+  curr_lat = displayLocation()['Latitude'];
+  curr_lon = displayLocation()['Longitude'];
+
+  query = "" + curr_lat + " " + curr_lon + " " + to_lat + " " + to_lon
+  encoded_query = encodeURIComponent(query)
+
+  fetch(HOST + "/getMileDistance/" + encoded_query)
     .then((response) => response.json())
     .then((response) => {
       console.log(response)
