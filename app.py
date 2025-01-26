@@ -42,29 +42,11 @@ def addFlight(flightName):
 
 @app.route("/getAllBusinesses")
 def getAllBusinesses():
-    result = []
 
-    for business in businesses:
-        bus_dict = {
-            "name": business.name,
-            "owner_name": business.owner_name,
-            "description": business.description,
-            "category": business.category,
-            "address": business.address,
-            "latitude": business.latitude,
-            "longitude": business.longitude,
-            "rating": business.rating,
-            "review_count": business.review_count,
-            "phone": business.phone,
-            "website": business.website,
-            "social_media": business.social_media_links,
-            "opening_hours": business.opening_hours,
-            "images": business.images
-            
-        }
-        result.append(bus_dict)
+    for key, value in businesses.items():
+        businesses[key] = value.__dict__
 
-    return jsonify({"result": result})
+    return jsonify(businesses)
 
 @app.route("/locationFromIP")
 def addressDetails():
@@ -192,6 +174,28 @@ def searchBusinesses(search_query):
             results.append(business_id)
 
     return jsonify({'results': results})
+
+@app.route("/distanceFinder/<search_query>")
+def getMileDistance(search_query):
+    search_query = unquote(search_query)
+    lat1 = math.radians(search_query[0])
+    lat2 = math.radians(search_query[1])
+    lon1 = math.radians(search_query[2])
+    lon2 = math.radians(search_query[3])
+
+    delta_lat = abs(lat2 - lat1)
+    delta_lon = abs(lon2 - lon1)
+
+    a = math.sin(delta_lat / 2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(delta_lon / 2)**2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    # Earth's radius in miles
+    R = 3959
+
+    # Calculate the distance
+    distance = R * c
+
+    return jsonify({'distance': distance})
 
 if __name__ == "__main__":
     app.run()
