@@ -5,13 +5,14 @@ import socket
 from urllib.parse import urlencode
 import json
 from Business import Business
+import sample_businesses
 import re
 
 app = Flask(__name__)
 CORS(app)
 
 flights = []
-businesses = dict()
+businesses = sample_businesses.businesses
 business_count = 0
 
 # server is hosted
