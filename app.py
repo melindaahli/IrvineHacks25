@@ -44,6 +44,8 @@ def addFlight(flightName):
 def getAllBusinesses():
     result = []
 
+    print(businesses)
+
     for business in businesses:
         bus_dict = {
             "name": business.name,

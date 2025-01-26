@@ -1,7 +1,49 @@
 HOST = "http://127.0.0.1:5000"
 
 function doImmediately() {
+  alert('welcome!')
   $(".search-screen").hide();
+  addBusinessCards()
+}
+
+async function addBusinessCards() {
+  try {
+    // Wait for the businesses data to be fetched
+    console.log('trying to get businesses...')
+    const businesses = await getAllBusinesses();
+
+    // Loop through the dictionary using Object.entries()
+    console.log('businesses', businesses)
+    length_of_dict = Object.keys(businesses).length
+    console.log(businesses_length, length_of_dict)
+
+    for (let i = 0; i < length_of_dict; i++) {
+      business = businesses[String(i)]
+      business_name = business.name
+      operation_status = business.status
+      rating = business.rating
+      category = business.category
+      distance = '0'
+
+      // Append a new business card to the container
+      $('.search-result-container').append(
+        `<div class="result-box" onclick="showBusinessPage(${business.id})">
+          <div class="img-placeholder"></div>
+          <div class="info-section">
+            <h2 class="business-name">${business_name}</h2>
+            <p class="status-rating">
+              ${operation_status} &bull; <span class="star">&#9733; ${rating}</span>
+            </p>
+            <p class="category-distance">
+              ${category} &bull; ${distance} miles
+            </p>
+          </div>
+        </div>`
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching businesses:", error);
+  }
 }
 
 function addFlight() {
@@ -30,7 +72,7 @@ function getAllBusinesses() {
     .then((response) => response.json()) // Parse JSON
     .then((data) => {
       console.log(data);
-      return data; // Return the fetched data
+      return data.result; // Return the fetched data
     })
     .catch((error) => console.error("Error:", error));
 }
