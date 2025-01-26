@@ -112,12 +112,13 @@ def submitBusinessData():
 
 @app.route("/searchBusinesses/<search_query>")
 def searchBusinesses(search_query):
-    pattern = re.compile(re.escape(search_query), re.IGNORECASE)
+    words = search_query.split()
+    pattern = re.compile(r'|'.join([re.escape(word) for word in words]), re.IGNORECASE)
 
     results = []
 
     for business_id, business in businesses.items():
-        if pattern.search(business.description()):
+        if pattern.search(business.description):
             results.append(business)
 
     return results
