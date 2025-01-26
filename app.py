@@ -42,11 +42,7 @@ def addFlight(flightName):
 
 @app.route("/getAllBusinesses")
 def getAllBusinesses():
-
-    for key, value in businesses.items():
-        businesses[key] = value.__dict__
-
-    return jsonify(businesses)
+    return jsonify({key: value.__dict__ for key, value in businesses.items()})
 
 @app.route("/locationFromIP")
 def addressDetails():
