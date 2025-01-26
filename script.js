@@ -47,3 +47,14 @@ function displayLocation() {
       document.getElementById("display2").innerHTML = JSON.stringify(response);
     });
 }
+
+function getBusinessSearch(search_query){
+  encoded_query = encodeURIComponent(search_query)
+
+  fetch(HOST + "/searchBusinesses/" + encoded_query)
+    .then((response) => response.json())
+    .then((response) => {
+      console.log('sehfoehfsef')
+      console.log(response);
+    });
+}
