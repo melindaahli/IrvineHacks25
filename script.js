@@ -3,7 +3,11 @@ HOST = "http://127.0.0.1:5000"
 function doImmediately() {
   alert('welcome!')
   $(".search-screen").hide();
-  addBusinessCards()
+}
+
+async function getAllBusinesses() {
+  return await fetch(HOST + "/getAllBusinesses")
+    .then((response) => response.json()) 
 }
 
 async function addBusinessCards() {
@@ -12,35 +16,45 @@ async function addBusinessCards() {
     console.log('trying to get businesses...')
     const businesses = await getAllBusinesses();
 
-    // Loop through the dictionary using Object.entries()
-    console.log('businesses', businesses)
-    length_of_dict = Object.keys(businesses).length
-    console.log(businesses_length, length_of_dict)
+    console.log('businesses', businesses);
 
-    for (let i = 0; i < length_of_dict; i++) {
-      business = businesses[String(i)]
-      business_name = business.name
-      operation_status = business.status
-      rating = business.rating
-      category = business.category
-      distance = '0'
+    let interested_businesses = await search();
+    console.log('interested businesses', interested_businesses, typeof interested_businesses);
+    let bus_id = 0;
+    the_list = Object.values(interested_businesses)[0]
 
-      // Append a new business card to the container
-      $('.search-result-container').append(
-        `<div class="result-box" onclick="showBusinessPage(${business.id})">
-          <div class="img-placeholder"></div>
-          <div class="info-section">
-            <h2 class="business-name">${business_name}</h2>
-            <p class="status-rating">
-              ${operation_status} &bull; <span class="star">&#9733; ${rating}</span>
-            </p>
-            <p class="category-distance">
-              ${category} &bull; ${distance} miles
-            </p>
-          </div>
-        </div>`
-      );
-    }
+
+    // console.log(businesses_length, length_of_dict)
+    Object.values(businesses).forEach((business) => {  
+      console.log(bus_id);
+      if (bus_id in the_list) {
+        console.log('THIS IS A BUSINESSE', business)
+
+        let business_name = business.name
+        let operation_status = business.status
+        let rating = business.rating
+        let category = business.category
+        let distance = '0'
+
+        // Append a new business card to the container
+        $('.search-result-container').append(
+          `<div class="result-box" onclick="showBusinessPage(${business.id})">
+            <div class="img-placeholder"></div>
+            <div class="info-section">
+              <h2 class="business-name">${business_name}</h2>
+              <p class="status-rating">
+                ${operation_status} &bull; <span class="star">&#9733; ${rating}</span>
+              </p>
+              <p class="category-distance">
+                ${category} &bull; ${distance} miles
+              </p>
+            </div>
+          </div>`
+        );
+      }
+      bus_id += 1
+    });
+
   } catch (error) {
     console.error("Error fetching businesses:", error);
   }
@@ -67,15 +81,7 @@ function displayFlights() {
     });
 }
 
-function getAllBusinesses() {
-  return fetch(HOST + "/getAllBusinesses")
-    .then((response) => response.json()) // Parse JSON
-    .then((data) => {
-      console.log(data);
-      return data.result; // Return the fetched data
-    })
-    .catch((error) => console.error("Error:", error));
-}
+
 
 // async function fetchBusinessData() {
 //   try {
@@ -93,6 +99,7 @@ function getAllBusinesses() {
 
 function onSearchBtnClicked(){
   $(".home-screen").hide();
+  addBusinessCards()
   $(".search-screen").show();
 }
 
@@ -133,16 +140,25 @@ function display() {
     });
 }
 
-function search() {
-  query = document.getElementById("user-input").value
+// async function search() {
+//   query = document.getElementById("user-input").value
+//   encoded_query = encodeURIComponent(query);
+  
+//   fetch(HOST + "/searchBusinesses/" + encoded_query)
+//     .then((response) => response.json())
+//     .then((response) => {
+//       console.log(response)
+//       document.getElementById("display").innerHTML = JSON.stringify(response);
+//       return JSON.stringify(response);
+//     });
+// }
+
+async function search() {
+  query = document.getElementById("user-input").value;
   encoded_query = encodeURIComponent(query);
   
-  fetch(HOST + "/searchBusinesses/" + encoded_query)
-    .then((response) => response.json())
-    .then((response) => {
-      console.log(response)
-      document.getElementById("display").innerHTML = JSON.stringify(response);
-    });
+  return await fetch(HOST + "/searchBusinesses/" + encoded_query)
+    .then((response) => response.json()) 
 }
 
 function getDistance(to_lat, to_lon){
