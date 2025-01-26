@@ -1,25 +1,5 @@
 HOST = "http://127.0.0.1:5000"
-
-function addFlight() {
-  let userInput = document.getElementById("user-input").value;
-  //   console.log("hello");
-  fetch(HOST + "/addFlight/" + userInput)
-    .then((response) => response.json())
-    .then((response) => {
-      console.log(response);
-
-      displayFlights();
-    });
-}
-
-function displayFlights() {
-  fetch(HOST + "/getFlights")
-    .then((response) => response.json())
-    .then((response) => {
-      //   console.log(response);
-      document.getElementById("display").innerHTML = JSON.stringify(response);
-    });
-}
+current_search = "hi"
 
 function getAllBusinesses() {
   return fetch(HOST + "/getAllBusinesses")
@@ -68,6 +48,17 @@ function display() {
     .then((response) => response.json())
     .then((response) => {
       //   console.log(response);
+      document.getElementById("display").innerHTML = JSON.stringify(response);
+    });
+}
+
+function search() {
+  query = document.getElementById("user-input").value
+  encoded_query = encodeURIComponent(query);
+  fetch(HOST + "/searchBusinesses/" + encoded_query)
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response)
       document.getElementById("display").innerHTML = JSON.stringify(response);
     });
 }

@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import requests
 import socket
-from urllib.parse import urlencode
+from urllib.parse import urlencode, unquote
 import json
 from Business import Business
 import sample_businesses
@@ -19,6 +19,7 @@ EARTH_RADIUS_KM = 6371.0
 
 flights = []
 businesses = sample_businesses.businesses
+business_search_results = dict()
 business_count = len(businesses)
 
 # server is hosted
@@ -158,6 +159,7 @@ def generate_random_location(lat, lon, radius_km):
 
 @app.route("/searchBusinesses/<search_query>")
 def searchBusinesses(search_query):
+    search_query = unquote(search_query)
     words = search_query.split()
     pattern = re.compile(r'|'.join([re.escape(word) for word in words]), re.IGNORECASE)
 
@@ -165,10 +167,9 @@ def searchBusinesses(search_query):
 
     for business_id, business in businesses.items():
         if pattern.search(business.description):
-            results.append(business)
+            results.append(business_id)
 
-    return results
-
+    return jsonify({'results': results})
 
 if __name__ == "__main__":
     app.run()
