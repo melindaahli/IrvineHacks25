@@ -42,7 +42,29 @@ def addFlight(flightName):
 
 @app.route("/getAllBusinesses")
 def getAllBusinesses():
-    return jsonify(businesses)
+    result = []
+
+    for business in businesses:
+        bus_dict = {
+            "name": business.name,
+            "owner_name": business.owner_name,
+            "description": business.description,
+            "category": business.category,
+            "address": business.address,
+            "latitude": business.latitude,
+            "longitude": business.longitude,
+            "rating": business.rating,
+            "review_count": business.review_count,
+            "phone": business.phone,
+            "website": business.website,
+            "social_media": business.social_media_links,
+            "opening_hours": business.opening_hours,
+            "images": business.images
+            
+        }
+        result.append(bus_dict)
+
+    return jsonify({"result": result})
 
 @app.route("/locationFromIP")
 def addressDetails():
